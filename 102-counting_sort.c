@@ -17,7 +17,7 @@ void counting_sort(int *array, size_t size1)
 	if (count_arr == NULL)
 		return;
 
-	initialize_count_arr(&count_arr, max);
+	initialize_count_arr(count_arr, max);
 
 	while (i < size)
 	{
@@ -75,13 +75,13 @@ int find_max(int *array, size_t size)
  * Return: Nothing
  */
 
-void initialize_count_arr(int **count_arr, int size)
+void initialize_count_arr(int *count_arr, int size)
 {
 	int i = 0;
 
 	while (i < size)
 	{
-		(*count_arr)[i] = 0;
+		count_arr[i] = 0;
 		i++;
 	}
 }

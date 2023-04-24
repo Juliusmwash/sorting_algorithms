@@ -26,7 +26,7 @@ void counting_sort(int *array, size_t size);
 void swap(int *, int *);
 int gap_calculator(size_t);
 int find_max(int *, size_t);
-void initialize_count_arr(int **, int);
+void initialize_count_arr(int *, int);
 void print_count_arr(int *, int);
 int split_arrange_arr(int *, int, int, size_t);
 void recursive_sort(int *, int, int, size_t);
