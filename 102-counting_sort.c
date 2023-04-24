@@ -32,7 +32,7 @@ void counting_sort(int *array, size_t size1)
 		i++;
 	}
 
-	print_count_arr(count_arr, max);
+	print_array(count_arr, (size_t) max);
 
 	i = 0;
 	while (i < size)
@@ -84,26 +84,4 @@ void initialize_count_arr(int *count_arr, int size)
 		count_arr[i] = 0;
 		i++;
 	}
-}
-
-/**
- * print_count_arr - prints the counting array after it is setup.
- * @count_arr: Counting array.
- * @size: Size of the count_arr.
- * Return: Nothing
- */
-
-void print_count_arr(int *count_arr, int size)
-{
-	int i = 0;
-
-	while (i < size)
-	{
-		if (!i)
-		printf("%d", count_arr[i]);
-		else
-		printf(", %d", count_arr[i]);
-		i++;
-	}
-	putchar(10);
 }
