@@ -9,7 +9,7 @@
 
 void counting_sort(int *array, size_t size1)
 {
-	int max, i = 0, *count_arr, index, tmp, size;
+	int max, i = 0, *count_arr, size;
 
 	size = (int) size1;
 	max = 1 + find_max(array, size);
@@ -33,16 +33,7 @@ void counting_sort(int *array, size_t size1)
 	}
 
 	print_array(count_arr, (size_t) max);
-
-	i = 0;
-	while (i < size)
-	{
-		index = count_arr[array[i]] - 1;
-		tmp = array[index];
-		array[index] = array[i];
-		array[i] = tmp;
-		i++;
-	}
+	final_move(count_arr, array, size1);
 	free(count_arr);
 }
 
@@ -84,4 +75,35 @@ void initialize_count_arr(int *count_arr, int size)
 		count_arr[i] = 0;
 		i++;
 	}
+}
+
+/**
+ * final_move - rearranges the data in the array.
+ * @count_arr: Array with the counted data.
+ * @array: The array to sort.
+ * @size1: The size of the array.
+ * Return: Nothing.
+ */
+
+void final_move(int *count_arr, int *array, size_t size1)
+{
+	int *tmp, size, index, i = 0;
+
+	size = (int) size1;
+	tmp = malloc(size * sizeof(int));
+	if (tmp == NULL)
+		return;
+	while (i < size)
+	{
+		index = count_arr[array[i]] - 1;
+		tmp[index] = array[i];
+		i++;
+	}
+	i = 0;
+	while (i < size)
+	{
+		array[i] = tmp[i];
+		i++;
+	}
+	free(tmp);
 }

@@ -27,6 +27,7 @@ void swap(int *, int *);
 int gap_calculator(size_t);
 int find_max(int *, size_t);
 void initialize_count_arr(int *, int);
+void final_move(int *, int *, size_t );
 int split_arrange_arr(int *, int, int, size_t);
 void recursive_sort(int *, int, int, size_t);
 void print_array(const int *array, size_t size);
