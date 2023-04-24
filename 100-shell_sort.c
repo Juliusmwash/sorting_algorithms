@@ -3,7 +3,7 @@
 /**
  * shell_sort - sorts the given array
  * @array: The array to be sorted
- * @size: Size of the array
+ * @size1: Size of the array
  * Return: Nothing
  */
 
@@ -68,7 +68,7 @@ void swap(int *num, int *num2)
 
 /**
  * gap_calculator - finds the gap spacing
- * @size: Size of the array
+ * @size1: Size of the array
  * Return: gap size
  */
 
