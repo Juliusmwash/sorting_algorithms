@@ -11,6 +11,8 @@ void counting_sort(int *array, size_t size1)
 {
 	int max, i = 0, *count_arr, size;
 
+	if (size1 < 2 || array == NULL)
+		return;
 	size = (int) size1;
 	max = 1 + find_max(array, size);
 	count_arr = malloc(sizeof(int) * max);
@@ -93,9 +95,22 @@ void final_move(int *count_arr, int *array, size_t size1)
 	tmp = malloc(size * sizeof(int));
 	if (tmp == NULL)
 		return;
+	for (; i < size; i++)
+		tmp[i] = 0;
+	i = 0;
 	while (i < size)
 	{
 		index = count_arr[array[i]] - 1;
+		if (tmp[index] == array[i] && array[i])
+		{
+			while (index)
+			{
+				if (tmp[index] == array[i])
+					index -= 1;
+				else
+					break;
+			}
+		}
 		tmp[index] = array[i];
 		i++;
 	}
